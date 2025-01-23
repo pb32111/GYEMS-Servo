@@ -4,8 +4,8 @@
 * a simple RS485 communication between GYEMS servo and Arduino
 ***************************************************************/
 
-#ifndef GYEMS_H
-#define GYEMS_H
+#ifndef "GYEMS.h"
+#define "GYEMS.h"
 
 #include "Arduino.h"
 
