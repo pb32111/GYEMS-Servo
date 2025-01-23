@@ -2,7 +2,7 @@
 #define GYEMS_H
 
 #include "Arduino.h"
-#include <SoftwareSerial.h>  // Include the SoftwareSerial library
+#include <SoftwareSerial.h>  // รวมไลบรารี SoftwareSerial
 
 #define RS485_EN 2
 #define MAXDPS 30000
@@ -11,10 +11,10 @@ class GYEMS
 {
 public:
     GYEMS(int ID, int rxPin, int txPin, int baudRate);
-    // Constructor to initialize the pinMode, baudrate setting, and SoftwareSerial
+    // คอนสตรักเตอร์เพื่อกำหนดค่า pinMode, baudrate และ SoftwareSerial
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////// Data Converting function /////////////////////////////////////
+    ///////////////////////////////////// ฟังก์ชันการแปลงข้อมูล ///////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     void Int16ToByteData(unsigned int Data, unsigned char StoreByte[2]);
@@ -24,7 +24,7 @@ public:
     unsigned int Make14BitData(unsigned char loByte, unsigned char hiByte);
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////// Servo control function ///////////////////////////////////////
+    ///////////////////////////////////// ฟังก์ชันการควบคุมเซอร์โว /////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     float GetCurrentDEG();
@@ -46,7 +46,7 @@ private:
     int _currentPosition;
     byte Header = 0x3E;
     byte _ID;
-    SoftwareSerial mySerial;  // SoftwareSerial member variable
+    SoftwareSerial mySerial;  // ตัวแปรสมาชิก SoftwareSerial
 
     unsigned char ReadByte = 0;
     float OutputDeg;
@@ -64,8 +64,12 @@ private:
 GYEMS::GYEMS(int ID, int rxPin, int txPin, int baudRate) : mySerial(rxPin, txPin) {
     _ID = ID;
     pinMode(RS485_EN, OUTPUT);
-    mySerial.begin(baudRate); // Initialize SoftwareSerial with the given baud rate
+    mySerial.begin(baudRate); // กำหนดค่า SoftwareSerial ด้วย baud rate ที่ระบุ
 }
+
+// กำหนดฟังก์ชันอื่น ๆ...
+
+#endif
 
 // Define other member functions...
 
