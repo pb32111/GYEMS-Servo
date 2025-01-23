@@ -1,5 +1,5 @@
-#ifndef GYEMS_H
-#define GYEMS_H
+#ifndef "GYEMS.h"
+#define "GYEMS.h"
 
 #include "Arduino.h"
 #include <SoftwareSerial.h>  // รวมไลบรารี SoftwareSerial
