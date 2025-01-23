@@ -69,8 +69,4 @@ GYEMS::GYEMS(int ID, int rxPin, int txPin, int baudRate) : mySerial(rxPin, txPin
 
 // กำหนดฟังก์ชันอื่น ๆ...
 
-#endif
-
-// Define other member functions...
-
-#endif
+#endif  // GYEMS_H
